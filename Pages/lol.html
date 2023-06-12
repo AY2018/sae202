@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #sectionA{
+        background-color: red;
+        height: 200px;
+    }
+    .divUp{
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+    }
+</style>
+<body>
+    <div class="divUp"></div>
+    <div id="sectionA" style="overflow:auto; height:300px; width:300px;">
+        <div id="comments"></div>
+    </div>
+
+
+    <script>
+        var section = document.getElementById('sectionA');
+
+            // Simulate new comment
+            setInterval(function () {
+                // Create new div
+                var newComment = document.createElement('div');
+                newComment.textContent = 'New comment';
+
+                // Add div to section
+                section.appendChild(newComment);
+
+                // Scroll to bottom
+                section.scrollTop = section.scrollHeight;
+            }, 500);
+
+
+    </script>
+</body>
+</html>
