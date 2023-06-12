@@ -529,13 +529,170 @@
 
             // If it's the end of the game, you might want to do something special here...
             if (round > 3) {
-                console.log("End of the game!");
-                // Get the div with id "endDiv"
+    console.log("End of the game!");
+
+    // Get the div with id "endDiv"
     var endDiv = document.getElementById("endDiv");
 
     // Add the class "endDivFront"
     endDiv.classList.add("endDivFront");
-            }
+
+    // Get the p with id "firstComment" and "secondComment"
+    var firstComment = document.getElementById("firstComment");
+    var secondComment = document.getElementById("secondComment");
+
+    // Use a switch statement to handle every possible choice
+    switch (currentChoice) {
+        case "commentsAAA":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 3 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 3 commentaires négatifs sont tout ce qu'il fallait pour pousser une jeune femme au suicide";
+            break;
+        case "commentsAAB":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 3 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 2 commentaires négatifs sont tout ce qu'il fallait pour pousser une jeune femme au suicide. Même si tu as essayé de te rattraper, il était malheureusement trop tard.";
+            break;
+        case "commentsAAC":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 3 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 2 commentaires négatifs sont tout ce qu'il fallait pour pousser une jeune femme au suicide. Même si tu n'as rien ajouté à la fin, l'ignorance n'aide en aucun cas la victime.";
+            break;
+        case "commentsABA":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 3 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 2 commentaires négatifs sont tout ce qu'il fallait pour pousser une jeune femme au suicide. Même si tu l'as soutenu une fois, tu as tout gâché en lui donnant le coup de grace.";
+            break;
+        case "commentsABB":
+            endDiv.style.backgroundColor = "green";
+            firstComment.textContent = "Grâce à toi, Sarah a décidé d'ignorer les commentaires négatifs sur ses postes et de bloquer les utilisateurs qui l'harcèlent";
+            secondComment.textContent = "Comme quoi, 2 commentaires positives sont tout ce qu'il fallait pour encourager d'autres personnes à soutenir la victime. ";
+            break;
+        case "commentsABC":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 1 commentaire négatif était tout ce qu'il fallait pour pousser une jeune femme au suicide. Même si tu l'as soutenu une fois, tu as tout gâché en l'ignorant à la fin et en laisant les autres utlisateus la harcelé";
+            break;
+        case "commentsACA":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 2 commentaire négatif était tout ce qu'il fallait pour pousser une jeune femme au suicide. Même si tu n'as rien ajouté à la fin, l'ignorance n'aide en aucun cas la victime, d'autant plus que le feu a déjà été allumé";
+            break;
+        case "commentsACB":
+            endDiv.style.backgroundColor = "#aa7511";
+            firstComment.textContent = "A cause de toi, Sarah était en dépression pendant 3 mois. Elle a perdu du poids, et ses notes ont baisse";
+            secondComment.textContent = "Même si tu as décidé de la défendre à la fin, il était trop tard... Au moins, tu ne lui as pas donné le coup de grâce";
+            break;
+        case "commentsACC":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 3 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 1 commentaire négatif qui a déclanché la vague d'harcélement était plus que nécessaire. Même si tu as décidé de ne rien faire et voir la victime se faire harceler, tu es tout de même responsable.";
+            break;
+
+        case "commentsBAA":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 3 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 1 commentaire positif ne couvre pas les deux commentaires méchants que tu as envoyé par la suite.";
+            break;
+        case "commentsBAB":
+            endDiv.style.backgroundColor = "green";
+            firstComment.textContent = "Grâce à toi, Sarah a décidé d'ignorer les commentaires négatifs sur ses postes et de bloquer les utilisateurs qui l'harcèlent";
+            secondComment.textContent = "Comme quoi, 2 commentaires positives sont tout ce qu'il fallait pour encourager d'autres personnes à soutenir la victime. ";
+            break;
+        case "commentsBAC":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 1 commentaire négatif était tout ce qu'il fallait pour pousser une jeune femme au suicide. Même si tu l'as soutenu une fois, tu as tout gâché en l'ignorant à la fin et en laisant les autres utlisateus la harcelé";
+            break;
+        case "commentsBBA":
+            endDiv.style.backgroundColor = "#aa7511";
+            firstComment.textContent = "Sarah a décidé d'ignorer les commentaires négatifs sur ses postes et de bloquer les utilisateurs qui l'harcèlent";
+            secondComment.textContent = "Même si tu as décidé de suivre la foulle à la fin, tes deux premiers commentaires positifs étaient plus que suffisants pour encourager d'autres utilisateurs à protéger la victime";
+            break;
+        case "commentsBBB":
+            endDiv.style.backgroundColor = "green";
+            firstComment.textContent = "Grâce à toi, Sarah a décidé d'ignorer les commentaires négatifs sur ses postes et de bloquer les utilisateurs qui l'harcèlent";
+            secondComment.textContent = "Comme quoi, 3 commentaires positives sont tout ce qu'il fallait pour encourager d'autres personnes à soutenir la victime.";
+            break;
+        case "commentsBBC":
+            endDiv.style.backgroundColor = "green";
+            firstComment.textContent = "Grâce à toi, Sarah a décidé d'ignorer les commentaires négatifs sur ses postes et de bloquer les utilisateurs qui l'harcèlent";
+            secondComment.textContent = "Comme quoi, 2 commentaires positives sont tout ce qu'il fallait pour encourager d'autres personnes à soutenir la victime.";
+            break;
+        case "commentsBCA":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 1 commentaire négatif était tout ce qu'il fallait pour pousser une jeune femme au suicide. Même si tu l'as soutenu une fois, tu as tout gâché en suivant la foule à la fin et en laisant les autres utlisateus la harcelé";
+            break;
+
+        case "commentsBCB":
+            endDiv.style.backgroundColor = "green";
+            firstComment.textContent = "Grâce à toi, Sarah a décidé d'ignorer les commentaires négatifs sur ses postes et de bloquer les utilisateurs qui l'harcèlent";
+            secondComment.textContent = "Comme quoi, 2 commentaires positives sont tout ce qu'il fallait pour encourager d'autres personnes à soutenir la victime.";
+            break;
+
+        case "commentsBCC":
+            endDiv.style.backgroundColor = "green";
+            firstComment.textContent = "Grâce à toi, Sarah a décidé d'ignorer les commentaires négatifs sur ses postes et de bloquer les utilisateurs qui l'harcèlent";
+            secondComment.textContent = "Comme quoi, 1 commentaire positif au tout début du harcèlement était tout ce qu'il fallait pour encourager d'autres personnes à soutenir la victime.";
+            break;
+
+
+        case "commentsCAA":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 2 commentaires négatifs étaient tout ce qu'il fallait pour pousser une jeune femme au suicide.";
+            break;
+        case "commentsCAB":
+            endDiv.style.backgroundColor = "#aa7511";
+            firstComment.textContent = "Sarah a décidé d'ignorer les commentaires négatifs sur ses postes et de bloquer les utilisateurs qui l'harcèlent";
+            secondComment.textContent = "Même si tu as décidé de suivre la foulle en cours de route, ton soutient à la fin a redonné un peu d'espoir à la victime qu'elle n'était pas toute seule.";
+            break;
+
+        case "commentsCAC":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 1 commentaire négatif était tout ce qu'il fallait pour pousser une jeune femme au suicide. Même si tu l'as ignoré deux fois, c'était deux fois de trop.";
+            break;
+
+        case "commentsCBA":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 1 commentair négatif lorsqu'elle se sentait le plus mal était tout ce qu'il fallait pour pousser une jeune femme au suicide.";
+            break;
+
+        case "comments CBB":
+            endDiv.style.backgroundColor = "green";
+            firstComment.textContent = "Grâce à toi, Sarah a décidé d'ignorer les commentaires négatifs sur ses postes et de bloquer les utilisateurs qui l'harcèlent";
+            secondComment.textContent = "Comme quoi, 2 commentaires positives sont tout ce qu'il fallait pour encourager d'autres personnes à soutenir la victime.";
+            break;
+        case "comments CBC":
+            endDiv.style.backgroundColor = "#aa7511";
+            firstComment.textContent = "Sarah était en dépression pendant 3 mois. Elle a perdu du poids, et ses notes ont baisse";
+            secondComment.textContent = "Comme quoi, rester à l'écart pendant que d'autres harcèlent quelqu'un ne peut être que nefaste pour la victime.";
+            break;
+        
+        case "commentsCCA":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Comme quoi, 1 commentaire négatif était tout ce qu'il fallait pour pousser une jeune femme au suicide. Même si tu l'as ignoré deux fois, c'était deux fois de trop.";
+            break;
+        
+        case "commentsCCB":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Tu as laissé d'autres personnes l'harceler à deux reprises, il était bien trop tard pour la soutenir";
+            break;
+        
+        case "commentsCCC":
+            endDiv.style.backgroundColor = "#9A0606";
+            firstComment.textContent = "A cause de toi, Sarah a développé des tendances suicidaires, 4 mois plus tard, elle s'est jeté dans la Seine";
+            secondComment.textContent = "Ignorer un homme entrain de se faire battre alors que l'on peut le protéger, c'est la même chose qu'être parmis ceux qui le battent";
+            break;
+        // Continue this for all possible choices...
+    }
+}
+
         }
 
 
@@ -749,6 +906,162 @@
         }
 
 
+        /* Messages de fin --- Start */
+        let endMessages = {
+    'commentsAAA': {
+        firstComment: "Message for choice AAA",
+        secondComment: "Another message for choice AAA",
+        backgroundColor: "red"
+    },
+    'AAB': {
+        firstComment: "Message for choice AAB",
+        secondComment: "Another message for choice AAB",
+        backgroundColor: "colorAAB"
+    },
+    'AAC': {
+        firstComment: "Message for choice AAC",
+        secondComment: "Another message for choice AAC",
+        backgroundColor: "colorAAC"
+    },
+    'ABA': {
+        firstComment: "Message for choice ABA",
+        secondComment: "Another message for choice ABA",
+        backgroundColor: "colorABA"
+    },
+    'ABB': {
+        firstComment: "Message for choice ABB",
+        secondComment: "Another message for choice ABB",
+        backgroundColor: "colorABB"
+    },
+    'ABC': {
+        firstComment: "Message for choice ABC",
+        secondComment: "Another message for choice ABC",
+        backgroundColor: "colorABC"
+    },
+    'ACA': {
+        firstComment: "Message for choice ACA",
+        secondComment: "Another message for choice ACA",
+        backgroundColor: "colorACA"
+    },
+    'ACB': {
+        firstComment: "Message for choice ACB",
+        secondComment: "Another message for choice ACB",
+        backgroundColor: "colorACB"
+    },
+    'ACC': {
+        firstComment: "Message for choice ACC",
+        secondComment: "Another message for choice ACC",
+        backgroundColor: "colorACC"
+    },
+    'BAA': {
+        firstComment: "Message for choice BAA",
+        secondComment: "Another message for choice BAA",
+        backgroundColor: "colorBAA"
+    },
+    'BAB': {
+        firstComment: "Message for choice BAB",
+        secondComment: "Another message for choice BAB",
+        backgroundColor: "colorBAB"
+    },
+    'BAC': {
+        firstComment: "Message for choice BAC",
+        secondComment: "Another message for choice BAC",
+        backgroundColor: "colorBAC"
+    },
+    'BBA': {
+        firstComment: "Message for choice BBA",
+        secondComment: "Another message for choice BBA",
+        backgroundColor: "colorBBA"
+    },
+    'BBB': {
+        firstComment: "Message for choice BBB",
+        secondComment: "Another message for choice BBB",
+        backgroundColor: "colorBBB"
+    },
+    'BBC': {
+        firstComment: "Message for choice BBC",
+        secondComment: "Another message for choice BBC",
+        backgroundColor: "colorBBC"
+    },
+    'BCA': {
+        firstComment: "Message for choice BCA",
+        secondComment: "Another message for choice BCA",
+        backgroundColor: "colorBCA"
+    },
+    'BCB': {
+        firstComment: "Message for choice BCB",
+        secondComment: "Another message for choice BCB",
+        backgroundColor: "colorBCB"
+    },
+    'BCC': {
+        firstComment: "Message for choice BCC",
+        secondComment: "Another message for choice BCC",
+        backgroundColor: "colorBCC"
+    },
+    'CAA': {
+        firstComment: "Message for choice CAA",
+        secondComment: "Another message for choice CAA",
+        backgroundColor: "colorCAA"
+    },
+    'CAB': {
+        firstComment: "Message for choice CAB",
+        secondComment: "Another message for choice CAB",
+        backgroundColor: "colorCAB"
+    },
+    'CAC': {
+        firstComment: "Message for choice CAC",
+        secondComment: "Another message for choice CAC",
+        backgroundColor: "colorCAC"
+    },
+    'CBA': {
+        firstComment: "Message for choice CBA",
+        secondComment: "Another message for choice CBA",
+        backgroundColor: "colorCBA"
+    },
+    'CBB': {
+        firstComment: "Message for choice CBB",
+        secondComment: "Another message for choice CBB",
+        backgroundColor: "colorCBB"
+    },
+    'CBC': {
+        firstComment: "Message for choice CBC",
+        secondComment: "Another message for choice CBC",
+        backgroundColor: "colorCBC"
+    },
+    'CCA': {
+        firstComment: "Message for choice CCA",
+        secondComment: "Another message for choice CCA",
+        backgroundColor: "colorCCA"
+    },
+    'CCB': {
+        firstComment: "Message for choice CCB",
+        secondComment: "Another message for choice CCB",
+        backgroundColor: "colorCCB"
+    },
+    'CCC': {
+        firstComment: "Message for choice CCC",
+        secondComment: "Another message for choice CCC",
+        backgroundColor: "colorCCC"
+    }
+}
+
+const endDiv = document.getElementById("endDiv");
+const firstComment = document.getElementById("firstComment");
+const secondComment = document.getElementById("secondComment");
+
+let choice = endMessages[currentChoice];
+
+if(choice){
+    firstComment.innerText = choice.firstComment;
+    secondComment.innerText = choice.secondComment;
+    endDiv.style.backgroundColor = choice.backgroundColor;
+}
+
+console.log('The current choice for last is ' + currentChoice);  // To check the value of currentChoice
+console.log('The object being retrieved is ' + endMessages[currentChoice]);  // To check the object being retrieved
+
+
+        /* Messages de fin --- End */
 
 
 

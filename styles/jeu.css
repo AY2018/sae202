@@ -1,15 +1,15 @@
 /*background-color: #B10000;*/
 
 
-.neonText{
+.neonText {
     font-size: 3rem;
 }
 
-.game{
+.game {
     width: 100%;
 }
 
-.game_container{
+.game_container {
     width: 100%;
     display: flex;
     position: relative;
@@ -17,7 +17,7 @@
     height: 90vh;
 }
 
-.game_interface{
+.game_interface {
     width: 60%;
     height: 100%;
     position: absolute;
@@ -27,13 +27,14 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 99;
-    
+
 }
 
-.game_choices h1{
+.game_choices h1 {
     text-align: center;
 }
-.game_choices{
+
+.game_choices {
     width: 35%;
     height: 100%;
     position: absolute;
@@ -57,10 +58,10 @@
 
 @keyframes decaleDroite {
     to {
-            right: 0;
-            transform: translate(0%, -50%);
-            opacity: 1;
-        }
+        right: 0;
+        transform: translate(0%, -50%);
+        opacity: 1;
+    }
 }
 
 @keyframes decaleGauche {
@@ -71,7 +72,7 @@
 }
 
 
-.game img{
+.game img {
     width: 60px;
     height: 60px;
     object-fit: cover;
@@ -79,44 +80,44 @@
 }
 
 
-.game_interface{
+.game_interface {
     display: flex;
     flex-direction: column;
     background-color: #1a191a;
 }
 
-.game_video{
+.game_video {
     width: 100%;
     height: 40%;
 }
 
-video{
+video {
     width: 100%;
-        height: 100%;
-        /* This is 100% of the viewport height */
-        object-fit: cover;
+    height: 100%;
+    /* This is 100% of the viewport height */
+    object-fit: cover;
 }
 
 
-.game_comments{
+.game_comments {
     height: 60%;
     position: relative;
     padding: 10px 3%;
 }
 
-.game_comments::before{
+.game_comments::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 30%;
-    background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-z-index: 2;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 2;
 }
 
-.game_comments_likeBtns{
+.game_comments_likeBtns {
     position: absolute;
     display: flex;
     gap: 20px;
@@ -127,18 +128,18 @@ z-index: 2;
     padding: 30px 3%;
 }
 
-.game_comments_likeBtns i{
+.game_comments_likeBtns i {
     font-size: 1.8rem;
 }
 
-.fa-bookmark{
+.fa-bookmark {
     position: absolute;
     right: 3%;
 }
 
 
 
-.game_comments_section{
+.game_comments_section {
 
     height: 100%;
     padding: 20% 0;
@@ -149,7 +150,7 @@ z-index: 2;
 }
 
 
-.game_comments_comment{
+.game_comments_comment {
     height: 15%;
     width: 100%;
     display: flex;
@@ -157,18 +158,18 @@ z-index: 2;
     gap: 20px;
 }
 
-.game_comments_comment_texte{
+.game_comments_comment_texte {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.game_comments_comment_texte h2{
+.game_comments_comment_texte h2 {
     font-size: 1rem;
 }
 
 
-.game_comments_user{
+.game_comments_user {
     background-color: white;
     position: absolute;
     bottom: 10px;
@@ -182,7 +183,7 @@ z-index: 2;
 }
 
 
-#ajouterCommentaire{
+#ajouterCommentaire {
     color: gray;
     width: 80%;
     white-space: pre-wrap;
@@ -207,32 +208,33 @@ z-index: 2;
     background-color: white;
 }
 
-.game_choices a{
+.game_choices a {
     width: 80%;
     font-size: 1.5rem;
     text-align: center;
 }
 
-.hideScreen{
+.hideScreen {
     display: none;
     position: absolute;
     width: 100%;
     height: 100%;
     backdrop-filter: brightness(0.5) blur(5px);
 }
+
 /* Buttons */
 
 
-.likedBtn{
+.likedBtn {
     background-color: pink;
 }
 
 
-#endDiv{
+#endDiv {
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: -98984;
+    z-index: 98984;
     padding: 10% 5%;
     display: none;
     flex-direction: column;
@@ -243,15 +245,28 @@ z-index: 2;
     backdrop-filter: brightness(0.2);
 }
 
-.endDivFront{
+#endDiv p {
+    text-align: justify;
+}
+
+#firstComment {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#secondComment {
+    font-style: italic;
+}
+
+.endDivFront {
     display: flex !important;
 }
 
-#endDiv h1{
+#endDiv h1 {
     text-align: center;
 }
 
-#endDiv a{
+#endDiv a {
     font-size: 3rem;
     display: flex;
     align-items: center;
