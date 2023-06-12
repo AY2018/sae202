@@ -1,0 +1,30 @@
+.legal{
+    width: 60%;
+}
+
+
+.legal h1{
+    font-family: 'Electrolize', sans-serif;
+    font-size: 2rem;
+    color: #c12e2e;
+}
+
+
+.legal h2 {
+    font-family: 'Electrolize', sans-serif;
+    font-size: 1.5rem;
+    color: #9A0606;
+}
+
+
+.legal p{margin: 20px 0;}
+
+
+.legalRules{
+    margin-top: 20px;
+}
+
+footer li{
+    width: fit-content;
+}
+

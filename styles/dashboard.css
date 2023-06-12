@@ -1,0 +1,99 @@
+main{display: flex; justify-content: center; align-items: center; flex-direction: column;}
+
+article {
+    padding: 40px 10%;
+}
+
+
+table {
+    width: 100%;
+}
+
+ table td {
+    text-align: center;
+    padding: 20px;
+}
+
+ table thead tr {
+    background-color: #222 !important;
+    color: white;
+}
+
+
+
+ table tr {
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+
+ table tbody tr:hover {
+    filter: brightness(1.5);
+}
+
+ table tr:nth-child(even) {
+    background-color: #19162c;
+}
+
+ table tr:nth-child(odd) {
+    background-color: #3b3454;
+}
+
+a.btnActive {
+    filter: brightness(1.2);
+}
+
+
+
+.btnSection{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: baseline;
+    padding-left: 10%;
+}
+
+button{
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 21px;
+}
+
+.firstRow button{
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
+
+.secondRow button{
+    background-color: transparent;
+    color: white;
+    padding: 5px 10px;
+    
+}
+
+.validerBtn:hover{
+    background-color: green;
+    filter: brightness(1.5);
+}
+
+.suppBtn:hover{
+    background-color: red;
+    filter: brightness(1.5);
+}
+
+.firstRow button:hover{
+    transform: scale(0.98);
+    background-color: #3b3454;
+}
+
+
+.active{
+    background-color: #3b3454 !important;
+}
+
+.tablesContainer article{
+    display: none;
+}

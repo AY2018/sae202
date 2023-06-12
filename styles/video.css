@@ -1,0 +1,181 @@
+.current {
+    border-bottom: 1px solid #9A0606;
+}
+
+#mainElement {
+    /* greater than 100% to create the gradient effect */
+    background-color: #303639;
+    padding: 5vh 0;
+    /* to allow the video to be positioned in relation to this */
+}
+
+@keyframes whiteToB {
+    0%{
+        background-color: #303639;
+    }
+
+    10%{
+        background-color: rgb(178, 178, 178);
+    }
+    100%{
+        background-color: black;
+    }
+}
+
+@keyframes blackToW {
+    0% {
+        color: black;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        color: white;
+    }
+}
+
+
+@keyframes nextAppear {
+    0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+.videoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.test {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    position: relative;
+}
+
+.videoContainer .videoBtn{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: #9A0606;
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    right: -58px;
+    top: 0;
+}
+
+.videoContainer section i{
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.music_no{
+    position: relative;
+}
+
+.music_no::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100%; /* adjust as necessary */
+    height: 5px;
+    font-size: 2px;
+    background-color: #9A0606;
+    transform: rotate(-45deg);
+}
+.fa-music{
+    border-top: white solid 1px;
+}
+
+
+video{
+    border-radius: 5px 0 5px 5px;
+    height: 80vh;
+    width: fit-content;
+    position: relative;
+}
+
+video .playbtn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    z-index: 9999;
+}
+
+.video_nextPage{
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    animation: nextAppear 1s ease-in forwards;
+    opacity: 0;
+}
+
+.video_nextPage h1{
+    font-size: 3rem;
+}
+
+
+.video_nextPage a{
+    background-color: #9A0606;
+    border-radius: 12px;
+    font-size: 2rem;
+    padding: 13px 48px;
+    font-family: 'Electrolize', sans-serif;
+}
+
+
+/* ...Rest of your CSS... */
+
+#playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    background-color: #00000090;
+    width: 100%;
+    height: 100%;
+}
+
+#playButton:hover {
+    opacity: 1;
+}
+
+.test {
+    position: relative;
+}
+
+
+.fas.fa-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}

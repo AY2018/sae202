@@ -1,0 +1,142 @@
+main {
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: center;
+    flex-direction: column;
+    min-height:100vh;
+}
+
+.dasboardArticle {
+    padding: 40px 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+}
+
+
+.tablesContainer{
+    display: flex;
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    text-align: center;
+    padding: 20px;
+}
+
+table thead tr {
+    background-color: #222 !important;
+    color: white;
+}
+
+h1{
+    font-family: 'Quantico' !important;
+}
+
+h1 .neonText{
+    color: red;
+        text-shadow: 0 0 7px red;
+        font-family: 'Quantico' !important;
+        font-weight: 400;
+}
+
+
+table tr {
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+
+table tbody tr:hover {
+    filter: brightness(1.5);
+}
+
+table tr:nth-child(even) {
+    background-color: #19162c;
+}
+
+table tr:nth-child(odd) {
+    background-color: #3b3454;
+}
+
+a.btnActive {
+    filter: brightness(1.2);
+}
+
+
+
+.btnSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: baseline;
+}
+
+button {
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 21px;
+}
+
+.firstRow button {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    transition: 0.2s ease-in;
+}
+
+.suppBtn {
+    background-color: transparent;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    color: white;
+    border: red 1px solid;
+}
+
+.suppBtn:hover {
+    background-color: red;
+    filter: brightness(1.5);
+    color: white;
+}
+
+.firstRow button:hover {
+    transform: scale(0.98);
+    background-color: #3b3454;
+}
+
+form{
+    width: 100%;
+}
+.active {
+    background-color: #3b3454 !important;
+}
+
+.tablesContainer article {
+    display: none;
+    width: 100%;
+}
+
+.checkbox{
+    display: none;
+}
+
+.logOut{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    font-size: 2rem;
+}

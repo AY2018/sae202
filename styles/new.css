@@ -1,0 +1,92 @@
+
+
+
+/* contact */
+
+article.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+
+.contact section {
+    background-color: #B10000;
+    padding: 40px 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+
+.contact .num {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lesNumsIcones {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.contact_links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact_links a {
+    padding: 16px 36px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+
+.contact_links_btn {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Info */
+
+article.info h1{
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.info_section{
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+}
+
+.info_section figure{
+    height: 100%;
+    background-color: red;
+}
+
+.info_section figure, .infoText{
+    width: 50%;
+}
+
+.infoText{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    line-height: 2;
+}
+
+.infoText h2{
+    margin-bottom: 10px;
+}
+
+

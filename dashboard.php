@@ -1,0 +1,216 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+
+// Assuming you have a MySQL database connection
+$conn = mysqli_connect("localhost", "ayoubkahfy_final", "Ayoub2018ww", "ayoubkahfy_sae203");
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+if (isset($_POST['delete'])){
+    if (isset($_POST['project_ids'])) {
+        foreach($_POST['project_ids'] as $id){
+            // Prepare an SQL statement for deletion
+            $sql = "DELETE FROM messageTable WHERE id = ?";
+
+            // Create a prepared statement
+            $stmt = $conn->prepare($sql);
+
+            // Bind parameters
+            $stmt->bind_param("i", $id);
+
+            // Execute the statement
+            $stmt->execute();
+        }
+    }
+}
+
+if (isset($_POST['valider'])){
+    if (isset($_POST['project_ids'])) {
+        foreach($_POST['project_ids'] as $id){
+            // Prepare an SQL statement for deletion
+            $sql = "UPDATE messageTable SET status = 'ok' WHERE id = ?";
+
+            // Create a prepared statement
+            $stmt = $conn->prepare($sql);
+
+            // Bind parameters
+            $stmt->bind_param("i", $id);
+
+            // Execute the statement
+            $stmt->execute();
+        }
+    }
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./general.css">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="./js/dashboard.js" async></script>
+
+
+    <title>#OnTeVoit</title>
+</head>
+
+<body>
+    <main>
+        <article class="dasboardArticle">
+            <h1> <span class="neonText">#OnTeVoit</span> Gestion des Messages</h1>
+
+            <section class="btnSection">
+                <div class="firstRow">
+                    <button class="all" id="all" onclick="appearAll()">Tout les commentaires</button>
+                    <button class="affiches" id= "Affiches" onclick="appearAffiches()">Commentaires Affichés</button>
+                    <button class="aValider" id="btnValider" onclick="appearValider()">A Valider</button>
+                </div>
+                <i class="fa-solid fa-trash suppBtn" id="Supp2" onclick="afficherSupp()"></i>
+            </section>
+
+            <section class="tablesContainer">
+                <article class="all" id="sectionAll">
+                    <form method="post">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th class="checkbox"><input type="checkbox" id="checkAll" /></th>
+                                <th>Nom</th>
+                                <th>Commentaire</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sql = "SELECT id, name, message, status FROM messageTable";
+                                $result = $conn->query($sql);
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<tr>';
+                                        echo "<td class='checkbox'><input type='checkbox' name='project_ids[]' value='{$row["id"]}' /></td>";
+                                        echo '<td>'.htmlspecialchars($row["name"]).'</td>';
+                                        echo '<td>'.nl2br(htmlspecialchars($row["message"])).'</td>';
+                                        if($row["status"] === 'ok'){
+                                            echo '<td>Validé</td>';
+                                        }
+                                        elseif($row["status"] === 'notOk'){
+                                            echo '<td>Pas Validé</td>';
+                                        }
+                                        else{
+                                            echo '<td>Unknown Status</td>';
+                                        }
+                                        echo '</tr>';
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='4'>No messages found</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                        <input type="submit" name="delete" value="Supprimer les messages sélectionnés" />
+                    </form>
+
+                </article>
+
+                <article class="all" id="sectionAffiches">
+                    <form method="post">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th class="checkbox"><input type="checkbox" id="checkAll" /></th>
+                                <th>Nom</th>
+                                <th>Commentaire</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sql = "SELECT id, name, message FROM messageTable WHERE status = 'ok'";
+                                $result = $conn->query($sql);
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<tr>';
+                                        echo "<td class='checkbox'><input type='checkbox' name='project_ids[]' value='{$row["id"]}' /></td>";
+                                        echo '<td>'.htmlspecialchars($row["name"]).'</td>';
+                                        echo '<td>'.nl2br(htmlspecialchars($row["message"])).'</td>';
+                                        echo '</tr>';
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='3'>No messages found</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                        <input type="submit" name="delete" value="Supprimer les messages sélectionnés" />
+                    </form>
+
+                </article>
+
+                <article class="all" id="sectionValider">
+                    <form method="post">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th class="checkbox"><input type="checkbox" id="checkAll" /></th>
+                                <th>Nom</th>
+                                <th>Commentaire</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sql = "SELECT id, name, message FROM messageTable WHERE status = 'notOk'";
+                                $result = $conn->query($sql);
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        echo '<tr>';
+                                        echo "<td class='checkbox'><input type='checkbox' name='project_ids[]' value='{$row["id"]}' /></td>";
+                                        echo '<td>'.htmlspecialchars($row["name"]).'</td>';
+                                        echo '<td>'.nl2br(htmlspecialchars($row["message"])).'</td>';
+                                        echo '</tr>';
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='3'>Aucun message trouvé</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                        <input type="submit" name="valider" value="Valilder les messages sélectionnés" />
+                    </form>
+
+                </article>
+            </section>
+
+            <a href=".logout.php" class="logOut"><i class="fa-solid fa-right-from-bracket"></i></a>
+        </article>
+        
+        
+    </main>
+    <?php $conn->close(); ?>
+
+    <script>
+    document.getElementById('checkAll').onclick = function() {
+        var checkboxes = document.getElementsByName('project_ids[]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = this.checked;
+        }
+    };
+</script>
+</body>
+
+</html>

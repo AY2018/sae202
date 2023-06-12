@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /sae202/login.php
+Disallow: /sae202/dashboard.php

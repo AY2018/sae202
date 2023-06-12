@@ -1,0 +1,228 @@
+/*background-color: #B10000;*/
+
+
+.neonText{
+    font-size: 3rem;
+}
+
+.game{
+    width: 100%;
+}
+
+.game_container{
+    width: 100%;
+    display: flex;
+    position: relative;
+    gap: 60px;
+    height: 90vh;
+}
+
+.game_interface{
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    /* left: 0;
+    top: 0; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    
+}
+
+.game_choices{
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    /* right: 0;
+    top: 0; */
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    z-index: 98;
+    opacity: 0;
+
+}
+
+.animate-decaleDroite {
+    animation: decaleDroite 1s ease-in-out forwards;
+}
+
+.animate-decaleGauche {
+    animation: decaleGauche 1s ease-in-out forwards;
+}
+
+@keyframes decaleDroite {
+    to {
+            right: 0;
+            transform: translate(0%, -50%);
+            opacity: 1;
+        }
+}
+
+@keyframes decaleGauche {
+    to {
+        left: 0;
+        transform: translate(0%, -50%);
+    }
+}
+
+
+.game img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.game_interface{
+    display: flex;
+    flex-direction: column;
+    background-color: #1a191a;
+}
+
+.game_video{
+    width: 100%;
+    height: 40%;
+}
+
+video{
+    width: 100%;
+        height: 100%;
+        /* This is 100% of the viewport height */
+        object-fit: cover;
+}
+
+
+.game_comments{
+    height: 60%;
+    position: relative;
+    padding: 10px 3%;
+}
+
+.game_comments::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+z-index: 2;
+}
+
+.game_comments_likeBtns{
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    padding: 30px 3%;
+}
+
+.game_comments_likeBtns i{
+    font-size: 1.8rem;
+}
+
+.fa-bookmark{
+    position: absolute;
+    right: 3%;
+}
+
+
+
+.game_comments_section{
+
+    height: 100%;
+    padding: 20% 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    overflow-y: auto;
+}
+
+
+.game_comments_comment{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.game_comments_comment_texte{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.game_comments_comment_texte h2{
+    font-size: 1rem;
+}
+
+
+.game_comments_user{
+    background-color: white;
+    position: absolute;
+    bottom: 10px;
+    width: 94%;
+    border-radius: 21px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    z-index: 3;
+}
+
+
+#ajouterCommentaire{
+    color: gray;
+    width: 80%;
+    white-space: pre-wrap;
+}
+
+#commentairePublier {
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+#commentairePublier:hover {
+    transform: scale(0.95);
+}
+
+/* Game choices */
+
+.game_choices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: white;
+}
+
+.game_choices a{
+    width: 80%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.hideScreen{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(0.5) blur(5px);
+}
+/* Buttons */
+
+
+.likedBtn{
+    background-color: pink;
+}

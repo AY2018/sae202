@@ -1,0 +1,287 @@
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+article{
+  width: 100%;
+}
+
+main{
+  overflow-x: hidden;
+}
+/* SLIDER */
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  width: auto;
+  padding: 16px 32px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  font-size: 2rem;
+}
+
+#city{
+  font-size: 1.2rem;
+  border: 1px solid white;
+  padding: 10px;
+}
+/* Position the "next button" to the right */
+.next {
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.slideshowSection {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+h1{
+  font-family: 'Electrolize', sans-serif;
+}
+
+.mySlidesContainer{
+  display: flex ;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  align-items: center;
+}
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 641px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+.foundU{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.foundU #city{
+  font-size: 2rem;
+}
+
+
+
+.harceleurs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+
+
+
+/* Consequences */
+
+article.consequences{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 70px;
+}
+
+.consequences_data{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.consequences_card{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.consequences_card span{
+  font-size: 3rem;
+}
+
+
+
+
+.consequences_scroll{
+  display: flex;
+  align-items: center;
+  background-color: #9A0606;
+  width: 130%;
+  padding: 20px 0;
+}
+
+.consequences_scroll ul{display: flex;gap: 20px;}
+
+.consequences_scroll li{
+  width: fit-content;
+}
+
+/* Texte défilant */
+
+
+#maindiv {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  position: relative;
+  width: 140%;
+  height: 60px;
+  align-items: center;
+  background-color: #9A0606;
+}
+
+#maindiv ul {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#div1 {
+  animation: marquee 20s linear infinite;
+}
+
+#div2 {
+  animation: marquee2 20s linear infinite;
+  animation-delay: 10s;
+  /* instead of right: 100%; */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+
+/* Lois */
+
+.lois_section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 40px;
+}
+
+
+.lois_card {
+  position: relative;
+  width: 25%;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card_front,
+.card_back {
+  border-radius: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_front {
+  border: 1px solid #9A0606;
+  color: #9A0606;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.card_back {
+  background-color: white;
+  border: none;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.lois_card div p, .lois_card div h2 {
+  width: 90%;
+}
+
+.lois_card div h2{
+  text-align: center;
+}
+
+.card_back span {
+  color: #9A0606;
+  font-weight: bold;
+}
+
+
+.lois_card:hover .card_front {
+  transform: rotateY(-180deg);
+}
+
+.lois_card:hover .card_back {
+  transform: rotateY(0deg);
+}
+
+article.lois {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 70px;
+}

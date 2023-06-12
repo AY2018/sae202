@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles/header_footer.css">
+    <link rel="stylesheet" href="./styles/general.css">
+    <link rel="stylesheet" href="./styles/video.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <title>#OnTeVoit</title>
+</head>
+<body onload="loader()">
+    <div class="loader">
+        <h1 id="loader" class="neonText" data-titre="#OnTeVoit">#OnTeVoit</h1>
+    </div>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="current"><h1 class="neonText">#OnTeVoit</h1></a>
+            <ul>
+                <li><a href="./Pages/jeu.html">Fais ton choix</a></li>
+                <li><a href="./Pages/harceleur.html">#OnTeVoit</a></li>
+                <li><a href="./Pages/messages.php">Tu peux changer</a></li>
+                <li><a href="./Pages/new.html">Je me fais harceler</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="mainElement">
+        <article class="videoContainer">
+            
+            <section class="test">
+                <video id="myVideo" muted>
+                    <source src="./img/Composition1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="playButton"><i class="fas fa-play"></i></div>
+                
+                <section class="videoBtn">
+                    <i class="fa-solid fa-closed-captioning " id="ccBtn"></i>
+                    <i class="fa-solid fa-music music_no" id="musicBtn"></i>
+                </section>
+            </section>
+            
+            <section class="video_nextPage" id="video_nextPage">
+                <h1 class="neonText">#OnTeVoit</h1>
+                <a href="./Pages/jeu.html">Fais ton choix</a>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <section class="footer_firstRow">
+            <figure class="footer_section">
+                <img src="./img/logoGiv1.png" alt="">
+            </figure>
+            <ul class="footer_section">
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+            </ul>
+            <div class="footer_section lastSection">
+                <ul>
+                    <li><a href="./conditions.html">Conditions générales</a></li>
+                    <li><a href="./confidetialite.html">Politique de confidentialité</a></li>
+                    <li><a href="../sitemap.xml">Plan du site</a></li>
+                </ul>
+            </div>
+        </section>
+    
+        <section class="footer_secondRow">
+            <p>© 2023 #OnTeVoit | Site créé par <a href="https://ay2018.github.io/cosmo/" target="_blank">Cosmo</a></p>
+        </section>
+    </footer>
+
+    <script>
+        window.onload = () => {
+                const lettres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#";
+                const header = document.getElementById('loader');
+                let repetitions = 0;
+
+                const interval = setInterval(() => {
+                    header.innerText = header.dataset.titre.split("")
+                        .map((letter, index) => {
+                            if (index < repetitions) {
+                                return header.dataset.titre[index];
+                            }
+                            return lettres[Math.floor(Math.random() * 25)];
+                        })
+                        .join("");
+
+                    if (repetitions >= header.dataset.titre.length) {
+                        clearInterval(interval);
+                    }
+                    repetitions += 1 / 3;
+                }, 60);
+            };
+
+
+            var video = document.getElementById('myVideo');
+            var playButton = document.getElementById('playButton');
+            var mainElement = document.getElementById('mainElement');
+            var ccBtn = document.getElementById('ccBtn');
+            var musicBtn = document.getElementById('musicBtn');
+            var next = document.getElementById('video_nextPage');
+
+            playButton.addEventListener('click', function () {
+                video.play();
+                this.style.opacity = '0';
+
+                var videoDuration = video.duration;
+                var nextAppear = videoDuration - 4;
+
+                // Start the animations
+                mainElement.style.animation = 'whiteToB ' + videoDuration + 's ease forwards';
+                ccBtn.style.animation = 'blackToW ' + videoDuration + 's ease forwards';
+                musicBtn.style.animation = 'blackToW ' + videoDuration + 's ease forwards';
+                next.style.animation = 'nextAppear 3s ease forwards ' + nextAppear + 's';
+            });
+
+            // Mute/Unmute video 
+            document.getElementById('musicBtn').addEventListener('click', function () {
+                video.muted = !video.muted;
+                this.classList.toggle('music_no');
+            });
+
+            // Change video source
+            document.getElementById('ccBtn').addEventListener('click', function () {
+                this.classList.toggle('music_no');
+                if (video.getAttribute('src') == './img/Composition2.mp4') {
+                    video.setAttribute('src', './img/Composition1.mp4');
+                } else {
+                    video.setAttribute('src', './img/Composition2.mp4');
+                }
+
+                // Reset the animations
+                mainElement.style.animation = 'none';
+                ccBtn.style.animation = 'none';
+                musicBtn.style.animation = 'none';
+                next.style.animation = 'none';
+
+                video.load();
+                playButton.style.opacity = '0.8'; // Make the play button visible again
+            });
+
+    </script>
+</body>
+</html>
